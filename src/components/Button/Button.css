@@ -1,0 +1,11 @@
+.btn {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    transition: color .4s ease, background-color .4s ease;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}

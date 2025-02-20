@@ -6,6 +6,14 @@ import { useState } from "react"
 export const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const links = [
+        ["Início", "#"],
+        ["Sobre mim", "#"],
+        ["Serviços", "#"],
+        ["Depoimentos", "#"],
+        ["Contato", "#"],
+    ]
+    
     return (
         <nav className="navbar">
             {/* Botão Hambúrguer */}
@@ -14,21 +22,12 @@ export const Navbar = () => {
             </button>
 
             <ul className="menu">
-                <li><a href="#">INÍCIO</a></li>
-                <li><a href="">SOBRE MIM</a></li>
-                <li><a href="">SERVIÇOS</a></li>
-                <li><a href="">DEPOIMENTOS</a></li>
-                <li><a href="">CONTATO</a></li>
+                { links.map(link => (<li key={link[0]}><a href={link[1]}>{link[0]}</a></li>)) }
             </ul>
             
             <ul className={`menu-mobile ${isOpen ? "open" : ""}`}>
-                <li><a href="#">INÍCIO</a></li>
-                <li><a href="">SOBRE MIM</a></li>
-                <li><a href="">SERVIÇOS</a></li>
-                <li><a href="">DEPOIMENTOS</a></li>
-                <li><a href="">CONTATO</a></li>
+                { links.map(link => (<li key={link[0]}><a href={link[1]}>{link[0]}</a></li>)) }
             </ul>
-            
             
         </nav>
     )
